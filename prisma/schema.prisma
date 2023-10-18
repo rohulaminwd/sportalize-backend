@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(uuid())
+  firstName   String
+  lastName    String
+  email       String   @unique
+  password    String
+  role        UserRole @default(user)
+  profileImg  String?
+  contactNo   String?
+  address     String?
+  gender      String?
+  dateOfBirth String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reviewRatings ReviewRating[]
+  WishLists     WishList[]
+  Bookings      Bookings[]
+
+  @@map("users")
+}
+
+model BookingItem {
+  id            String         @id @default(uuid())
+  title         String
+  price         Int
+  img           String
+  location      String
+  venu          String
+  description   String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  sportCategory String
+  reviewRatings ReviewRating[]
+  bookings      Bookings[]
+  WishList      WishList[]
+
+  @@map("booking_items")
+}
+
+model WishList {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  bookingItemId String
+  bookingItem   BookingItem @relation(fields: [bookingItemId], references: [id])
+
+  @@map("wish_lists")
+}
+
+model ReviewRating {
+  id     String @id @default(uuid())
+  review String
+  rating String
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  bookingItemId String
+  bookingItem   BookingItem @relation(fields: [bookingItemId], references: [id])
+
+  @@map("review_rating")
+}
+
+model Bookings {
+  id     String      @id @default(uuid())
+  status OrderStatus @default(pending)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  bookingItemId String
+  bookingItem   BookingItem @relation(fields: [bookingItemId], references: [id])
+
+  @@map("bookings")
+}
+
+enum OrderStatus {
+  pending
+  shipped
+  delivered
+}
+
+enum UserRole {
+  admin
+  user
+  super_admin
+}
