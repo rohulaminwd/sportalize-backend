@@ -11,6 +11,7 @@ const getAllFromDB = async (): Promise<User[]> => {
     include: {
       reviewRatings: true,
       WishLists: true,
+      Bookings: true,
     },
   });
 
@@ -25,6 +26,7 @@ const getByIdFromDB = async (id: string): Promise<User | null> => {
     include: {
       reviewRatings: true,
       WishLists: true,
+      Bookings: true,
     },
   });
   return result;
@@ -67,6 +69,7 @@ const updateIntoDB = async (
     include: {
       reviewRatings: true,
       WishLists: true,
+      Bookings: true,
     },
   });
   return result;
@@ -80,6 +83,7 @@ const deleteFromDB = async (id: string): Promise<User> => {
     include: {
       reviewRatings: true,
       WishLists: true,
+      Bookings: true,
     },
   });
   return result;

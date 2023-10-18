@@ -1,7 +1,7 @@
 import express from 'express';
 import { AuthRoutes } from '../modules/auth/auth.routes';
 import { BookingItemRoutes } from '../modules/bookingItem/bookingItem.routes';
-import { CategoryRoutes } from '../modules/category/category.routes';
+import { FeedbackRoutes } from '../modules/feedback/feedback.routes';
 import { OrderRoutes } from '../modules/order/order.routes';
 import { reviewRoutes } from '../modules/review/review.routes';
 import { ProfileRoutes } from '../modules/user/user.profile';
@@ -25,8 +25,8 @@ const moduleRoutes = [
     route: BookingItemRoutes,
   },
   {
-    path: '/categories',
-    route: CategoryRoutes,
+    path: '/feedback',
+    route: FeedbackRoutes,
   },
   {
     path: '/bookings',

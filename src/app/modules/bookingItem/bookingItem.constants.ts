@@ -1,11 +1,11 @@
-export const BookFilterAbleFileds: string[] = [
+export const BookingFilterAbleFileds: string[] = [
   'search',
   'title',
-  'author',
-  'genre',
-  'category',
+  'location',
+  'venu',
+  'categorySport',
   'minPrice',
   'maxPrice',
 ];
 
-export const BookSearchableFields: string[] = ['title', 'author', 'genre'];
+export const BookingSearchableFields: string[] = ['title', 'author', 'genre'];

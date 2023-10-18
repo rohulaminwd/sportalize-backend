@@ -5,7 +5,7 @@ import { paginationFields } from '../../../constants/pagination';
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
-import { BookFilterAbleFileds } from './bookingItem.constants';
+import { BookingFilterAbleFileds } from './bookingItem.constants';
 import { BookingItemService } from './bookingItem.service';
 
 const createBookingItem = catchAsync(async (req: Request, res: Response) => {
@@ -20,7 +20,7 @@ const createBookingItem = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllBookingItems = catchAsync(async (req: Request, res: Response) => {
-  const filters = pick(req.query, BookFilterAbleFileds);
+  const filters = pick(req.query, BookingFilterAbleFileds);
   const options = pick(req.query, paginationFields);
 
   const result = await BookingItemService.getAllBookingItems(filters, options);

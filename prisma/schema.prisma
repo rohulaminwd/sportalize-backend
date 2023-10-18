@@ -27,6 +27,7 @@ model User {
   reviewRatings ReviewRating[]
   WishLists     WishList[]
   Bookings      Bookings[]
+  Feedback      Feedback[]
 
   @@map("users")
 }
@@ -65,6 +66,7 @@ model ReviewRating {
   id     String @id @default(uuid())
   review String
   rating String
+
   userId String
   user   User   @relation(fields: [userId], references: [id])
 
@@ -85,6 +87,17 @@ model Bookings {
   bookingItem   BookingItem @relation(fields: [bookingItemId], references: [id])
 
   @@map("bookings")
+}
+
+model Feedback {
+  id     String      @id @default(uuid())
+  status OrderStatus @default(pending)
+
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+  description String
+
+  @@map("feedback")
 }
 
 enum OrderStatus {

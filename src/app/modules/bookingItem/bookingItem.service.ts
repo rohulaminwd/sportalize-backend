@@ -5,7 +5,7 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
-import { BookSearchableFields } from './bookingItem.constants';
+import { BookingSearchableFields } from './bookingItem.constants';
 import { IBookFilterRequest } from './bookingItem.interfaces';
 
 const createBookingItem = async (data: BookingItem): Promise<BookingItem> => {
@@ -22,13 +22,21 @@ const getAllBookingItems = async (
   options: IPaginationOptions
 ): Promise<IGenericResponse<BookingItem[]>> => {
   const { size, page, skip } = paginationHelpers.calculatePagination(options);
-  const { search, category, minPrice, maxPrice, ...filtersData } = filters;
+  const {
+    search,
+    minPrice,
+    location,
+    title,
+    sportCategory,
+    maxPrice,
+    ...filtersData
+  } = filters;
 
   const andConditions = [];
 
   if (search) {
     andConditions.push({
-      OR: BookSearchableFields.map(field => ({
+      OR: BookingSearchableFields.map(field => ({
         [field]: {
           contains: search,
           mode: 'insensitive',
@@ -37,11 +45,20 @@ const getAllBookingItems = async (
     });
   }
 
-  if (category) {
+  if (location) {
     andConditions.push({
-      categoryId: {
-        equals: category,
-      },
+      location: location,
+    });
+  }
+  if (title) {
+    andConditions.push({
+      title: title,
+    });
+  }
+
+  if (sportCategory) {
+    andConditions.push({
+      sportCategory: sportCategory,
     });
   }
 
@@ -71,6 +88,7 @@ const getAllBookingItems = async (
     skip,
     include: {
       reviewRatings: true,
+      bookings: true,
     },
     take: size,
     orderBy:
