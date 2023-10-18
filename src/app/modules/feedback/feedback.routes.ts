@@ -6,8 +6,7 @@ const router = express.Router();
 
 router.get('/', CategoryController.getAllFeedback);
 router.get('/:id', CategoryController.getFeedbackById);
-
-router.post('/create-', CategoryController.createFeedback);
+router.post('/create', CategoryController.createFeedback);
 
 router.patch('/:id', CategoryController.updateFeedback);
 

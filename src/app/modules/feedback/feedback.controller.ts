@@ -11,7 +11,7 @@ const createFeedback = catchAsync(async (req: Request, res: Response) => {
   sendResponse<Feedback>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Category Created Successfully',
+    message: 'Feedback Created Successfully',
     data: result,
   });
 });
@@ -22,7 +22,7 @@ const getAllFeedback = catchAsync(async (req: Request, res: Response) => {
   sendResponse<Feedback[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'All Categories Data Retrieved Successfully',
+    message: 'All Feedback Data Retrieved Successfully',
     data: result,
   });
 });
@@ -34,7 +34,7 @@ const getFeedbackById = catchAsync(async (req: Request, res: Response) => {
   sendResponse<Feedback>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Single Category Data Fetched Successfully',
+    message: 'Single Feedback Data Fetched Successfully',
     data: result,
   });
 });
@@ -47,7 +47,7 @@ const updateFeedback = catchAsync(async (req: Request, res: Response) => {
   sendResponse<Feedback>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Category Updated Successfully',
+    message: 'Feedback Updated Successfully',
     data: result,
   });
 });
@@ -59,7 +59,7 @@ const deleteFeedback = catchAsync(async (req: Request, res: Response) => {
   sendResponse<Feedback>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Category Deleted Successfully',
+    message: 'Feedback Deleted Successfully',
     data: result,
   });
 });

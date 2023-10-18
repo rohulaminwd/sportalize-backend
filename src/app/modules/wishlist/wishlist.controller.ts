@@ -9,7 +9,7 @@ const createWishlist = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Review Created Successfully',
+    message: 'Wishlist Created Successfully',
     data: result,
   });
 });
@@ -19,7 +19,7 @@ const getWishlistFromDB = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'All Reviews Data Fetched Successfully',
+    message: 'All Wishlist Data Fetched Successfully',
     data: result,
   });
 });
@@ -30,7 +30,7 @@ const getSingleWishlist = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Single Review Data Fetched Successfully',
+    message: 'Single Wishlist Data Fetched Successfully',
     data: result,
   });
 });
@@ -42,7 +42,7 @@ const updateWishlistDataToDB = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Review Updated Successfully',
+      message: 'Wishlist Updated Successfully',
       data: result,
     });
   }
@@ -54,7 +54,7 @@ const deleteWishlistFromDB = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Review Deleted Successfully',
+    message: 'Wishlist Deleted Successfully',
     data: result,
   });
 });
