@@ -24,10 +24,10 @@ const getWishlistFromDB = async (): Promise<Partial<WishList>[]> => {
 
 const getSinglWishlist = async (
   id: string
-): Promise<Partial<WishList | null>> => {
-  const result = await prisma.wishList.findFirst({
+): Promise<Partial<WishList[] | null>> => {
+  const result = await prisma.wishList.findMany({
     where: {
-      id,
+      userId: id,
     },
     include: {
       user: true,

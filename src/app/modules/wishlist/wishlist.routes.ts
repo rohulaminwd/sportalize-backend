@@ -11,9 +11,9 @@ router.get(
   ReviewController.getSingleWishlist
 );
 
-router.post('/create-review', ReviewController.createWishlist);
+router.post('/create', ReviewController.createWishlist);
 
 router.patch('/:id', ReviewController.updateWishlistDataToDB);
 router.delete('/:id', ReviewController.deleteWishlistFromDB);
 
-export const reviewRoutes = router;
+export const WishlistRoutes = router;

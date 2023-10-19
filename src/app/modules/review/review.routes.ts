@@ -11,7 +11,7 @@ router.get(
   ReviewController.getSingleReview
 );
 
-router.post('/create-review', ReviewController.createReview);
+router.post('/create', ReviewController.createReview);
 
 router.patch('/:id', ReviewController.updateReviewDataToDB);
 router.delete('/:id', ReviewController.deleteReviewFromDB);
