@@ -19,6 +19,10 @@ const prisma_1 = __importDefault(require("../../../shared/prisma"));
 const createOrder = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield prisma_1.default.bookings.create({
         data: payload,
+        include: {
+            user: true,
+            bookingItem: true,
+        },
     });
     return result;
 });

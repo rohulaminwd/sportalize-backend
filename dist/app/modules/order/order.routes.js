@@ -9,6 +9,6 @@ const order_controller_1 = require("./order.controller");
 const router = express_1.default.Router();
 router.get('/', order_controller_1.OrderController.getAllOrders);
 router.get('/:id', order_controller_1.OrderController.getSingleOrder);
-router.post('/create-order', order_controller_1.OrderController.createOrder);
+router.post('/create', order_controller_1.OrderController.createOrder);
 router.delete('/id', order_controller_1.OrderController.createOrder);
 exports.OrderRoutes = router;

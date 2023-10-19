@@ -10,4 +10,8 @@ exports.BookingFilterAbleFileds = [
     'minPrice',
     'maxPrice',
 ];
-exports.BookingSearchableFields = ['title', 'author', 'genre'];
+exports.BookingSearchableFields = [
+    'title',
+    'location',
+    'categorySport',
+];
