@@ -11,6 +11,7 @@ const order_routes_1 = require("../modules/order/order.routes");
 const review_routes_1 = require("../modules/review/review.routes");
 const user_profile_1 = require("../modules/user/user.profile");
 const user_routes_1 = require("../modules/user/user.routes");
+const wishlist_routes_1 = require("../modules/wishlist/wishlist.routes");
 const router = express_1.default.Router();
 const moduleRoutes = [
     // ... routes
@@ -41,6 +42,10 @@ const moduleRoutes = [
     {
         path: '/reviews',
         route: review_routes_1.reviewRoutes,
+    },
+    {
+        path: '/wishlist',
+        route: wishlist_routes_1.WishlistRoutes,
     },
 ];
 moduleRoutes.forEach(route => router.use(route.path, route.route));

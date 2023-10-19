@@ -23,7 +23,11 @@ const createFeedback = (data) => __awaiter(void 0, void 0, void 0, function* () 
     return result;
 });
 const getAllFeedback = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield prisma_1.default.feedback.findMany({});
+    const result = yield prisma_1.default.feedback.findMany({
+        include: {
+            user: true,
+        },
+    });
     return result;
 });
 const getFeedbackById = (id) => __awaiter(void 0, void 0, void 0, function* () {

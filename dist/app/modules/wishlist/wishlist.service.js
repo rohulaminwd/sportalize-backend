@@ -34,9 +34,9 @@ const getWishlistFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 const getSinglWishlist = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield prisma_1.default.wishList.findFirst({
+    const result = yield prisma_1.default.wishList.findMany({
         where: {
-            id,
+            userId: id,
         },
         include: {
             user: true,

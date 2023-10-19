@@ -22,7 +22,7 @@ const createFeedback = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Category Created Successfully',
+        message: 'Feedback Created Successfully',
         data: result,
     });
 }));
@@ -31,7 +31,7 @@ const getAllFeedback = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'All Categories Data Retrieved Successfully',
+        message: 'All Feedback Data Retrieved Successfully',
         data: result,
     });
 }));
@@ -41,7 +41,7 @@ const getFeedbackById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Single Category Data Fetched Successfully',
+        message: 'Single Feedback Data Fetched Successfully',
         data: result,
     });
 }));
@@ -52,7 +52,7 @@ const updateFeedback = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Category Updated Successfully',
+        message: 'Feedback Updated Successfully',
         data: result,
     });
 }));
@@ -62,7 +62,7 @@ const deleteFeedback = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Category Deleted Successfully',
+        message: 'Feedback Deleted Successfully',
         data: result,
     });
 }));

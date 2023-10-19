@@ -22,7 +22,7 @@ const createWishlist = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Review Created Successfully',
+        message: 'Wishlist Created Successfully',
         data: result,
     });
 }));
@@ -31,7 +31,7 @@ const getWishlistFromDB = (0, catchAsync_1.default)((req, res) => __awaiter(void
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'All Reviews Data Fetched Successfully',
+        message: 'All Wishlist Data Fetched Successfully',
         data: result,
     });
 }));
@@ -41,7 +41,7 @@ const getSingleWishlist = (0, catchAsync_1.default)((req, res) => __awaiter(void
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Single Review Data Fetched Successfully',
+        message: 'Single Wishlist Data Fetched Successfully',
         data: result,
     });
 }));
@@ -51,7 +51,7 @@ const updateWishlistDataToDB = (0, catchAsync_1.default)((req, res) => __awaiter
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Review Updated Successfully',
+        message: 'Wishlist Updated Successfully',
         data: result,
     });
 }));
@@ -61,7 +61,7 @@ const deleteWishlistFromDB = (0, catchAsync_1.default)((req, res) => __awaiter(v
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Review Deleted Successfully',
+        message: 'Wishlist Deleted Successfully',
         data: result,
     });
 }));

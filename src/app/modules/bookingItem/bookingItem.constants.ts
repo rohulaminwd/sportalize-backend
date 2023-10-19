@@ -8,4 +8,8 @@ export const BookingFilterAbleFileds: string[] = [
   'maxPrice',
 ];
 
-export const BookingSearchableFields: string[] = ['title', 'author', 'genre'];
+export const BookingSearchableFields: string[] = [
+  'title',
+  'location',
+  'categorySport',
+];

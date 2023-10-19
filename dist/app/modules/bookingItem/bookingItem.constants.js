@@ -5,7 +5,7 @@ exports.BookingFilterAbleFileds = [
     'search',
     'title',
     'location',
-    'genre',
+    'venu',
     'categorySport',
     'minPrice',
     'maxPrice',

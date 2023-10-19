@@ -9,7 +9,7 @@ const feedback_controller_1 = require("./feedback.controller");
 const router = express_1.default.Router();
 router.get('/', feedback_controller_1.CategoryController.getAllFeedback);
 router.get('/:id', feedback_controller_1.CategoryController.getFeedbackById);
-router.post('/create-', feedback_controller_1.CategoryController.createFeedback);
+router.post('/create', feedback_controller_1.CategoryController.createFeedback);
 router.patch('/:id', feedback_controller_1.CategoryController.updateFeedback);
 router.delete('/:id', feedback_controller_1.CategoryController.deleteFeedback);
 exports.FeedbackRoutes = router;
