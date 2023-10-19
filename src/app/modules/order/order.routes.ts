@@ -7,7 +7,7 @@ router.get('/', OrderController.getAllOrders);
 
 router.get('/:id', OrderController.getSingleOrder);
 
-router.post('/create-order', OrderController.createOrder);
+router.post('/create', OrderController.createOrder);
 router.delete('/id', OrderController.createOrder);
 
 export const OrderRoutes = router;

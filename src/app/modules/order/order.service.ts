@@ -6,6 +6,10 @@ import prisma from '../../../shared/prisma';
 const createOrder = async (payload: Bookings): Promise<Bookings> => {
   const result = await prisma.bookings.create({
     data: payload,
+    include: {
+      user: true,
+      bookingItem: true,
+    },
   });
   return result;
 };
